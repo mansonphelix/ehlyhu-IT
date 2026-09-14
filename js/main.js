@@ -1,302 +1,249 @@
-// EHLYHU Global IT Solutions – Premium Interactions
-
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/**
+ * EHLYHU Global IT Solutions - Interactive Controller
+ * Mobile Drawer State, 3D Canvas Mesh, Emblem Tilt, Dynamic Counters
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu
-    const toggle = document.getElementById('mobile-toggle');
-    const nav = document.getElementById('nav');
-    if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('open');
-            toggle.classList.toggle('active');
-        });
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('open');
-                toggle.classList.remove('active');
-            });
-        });
-    }
-
-    // Header scroll
-    const header = document.getElementById('header');
-    if (header) {
-        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
-        window.addEventListener('scroll', onScroll);
-        onScroll();
-    }
-
-    // Active nav
-    const current = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-link').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === current || (current === '' && href === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
-
-    // Hero Slideshow
-    const slides = document.querySelectorAll('.slide');
-    if (slides.length > 0) {
-        let currentSlide = 0;
-        const showSlide = (index) => {
-            slides.forEach((s, i) => s.classList.toggle('active', i === index));
-        };
-        showSlide(0);
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }, 5500);
-    }
-
-    // Animated counters
-    const counters = document.querySelectorAll('[data-count]');
-    if (counters.length) {
-        const animateCounter = (el) => {
-            const target = parseInt(el.dataset.count, 10);
-            const duration = 2000;
-            const start = performance.now();
-            const update = (now) => {
-                const progress = Math.min((now - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.floor(eased * target).toLocaleString() + (el.dataset.suffix || '');
-                if (progress < 1) requestAnimationFrame(update);
-            };
-            requestAnimationFrame(update);
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(c => observer.observe(c));
-    }
-
-    // Contact form demo
-    const form = document.getElementById('contact-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const original = btn.innerHTML;
-            btn.innerHTML = 'Sending...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.innerHTML = '✓ Request Received';
-                btn.style.background = 'linear-gradient(135deg, #34d399, #22d3ee)';
-                const note = form.querySelector('.form-note');
-                if (note) {
-                    note.innerHTML = '<strong style="color:#34d399">Thank you!</strong> Our team will contact you shortly. (Demo form — connect a real backend for production.)';
-                }
-                form.reset();
-                setTimeout(() => {
-                    btn.innerHTML = original;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 4500);
-            }, 1200);
-        });
-    }
-
-    // Subtle 3D tilt on logo (skipped for users who prefer reduced motion)
-    const logo3d = document.querySelector('.logo-3d');
-    if (logo3d && !prefersReducedMotion && !isMobile && !isTouch) {
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 18;
-            const y = (e.clientY / window.innerHeight - 0.5) * 12;
-            logo3d.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-        });
-    }
-
-    // Scroll reveal (simple)
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
-    const revealEls = document.querySelectorAll(
-        '.service-card, .step-card, .testimonial-card, .value-card, .why-item, .industry-pill, .faq-item, .timeline-item'
-    );
-    if (revealEls.length) {
-        const shouldReveal = !isMobile && !isTouch && !prefersReducedMotion;
-        const revObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.15 });
-
-        if (shouldReveal) {
-            revealEls.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(24px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                revObserver.observe(el);
-            });
-        }
-    }
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-item').forEach((item) => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        if (!question || !answer) return;
-        question.addEventListener('click', () => {
-            const isOpen = item.classList.contains('open');
-            item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach((openItem) => {
-                if (openItem !== item) {
-                    openItem.classList.remove('open');
-                    openItem.querySelector('.faq-answer').style.maxHeight = null;
-                }
-            });
-            item.classList.toggle('open', !isOpen);
-            answer.style.maxHeight = !isOpen ? answer.scrollHeight + 'px' : null;
-        });
-    });
-
+    initHeader();
+    initMobileNav();
     initNetworkCanvas();
+    init3DHeroTilt();
+    initStatsCounter();
+    initFaqAccordion();
+    initContactForm();
 });
 
-/**
- * Renders a slowly rotating point-cloud globe on the hero canvas —
- * a lightweight (no library) stand-in for EHLYHU's worldwide network.
- * Pauses automatically off-screen, in background tabs, and for users
- * who prefer reduced motion.
- */
+// Sticky Header Blur and Elevation
+function initHeader() {
+    const header = document.getElementById('header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }, { passive: true });
+}
+
+// Mobile Hamburger Toggle with Scroll-Lock & Outside Dismissal
+function initMobileNav() {
+    const toggle = document.getElementById('mobile-toggle');
+    const nav = document.getElementById('nav');
+    if (!toggle || !nav) return;
+
+    function closeNav() {
+        nav.classList.remove('open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    function openNav() {
+        nav.classList.add('open');
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (nav.classList.contains('open')) {
+            closeNav();
+        } else {
+            openNav();
+        }
+    });
+
+    // Close when tapping any link inside mobile navigation
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeNav();
+        });
+    });
+
+    // Dismiss drawer when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+        if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+            closeNav();
+        }
+    });
+
+    // Dismiss on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+            closeNav();
+        }
+    });
+
+    // Restore default layout if screen is expanded to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+            closeNav();
+        }
+    }, { passive: true });
+}
+
+// 3D Canvas Interactive Node Globe
 function initNetworkCanvas() {
     const canvas = document.getElementById('network-canvas');
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
-    let width, height, dpr;
-    let points = [];
-    let angle = 0;
-    let running = !prefersReducedMotion;
-    let frame = null;
-
-    const NUM_POINTS = (window.matchMedia('(max-width: 768px)').matches ? 45 : 90);
-    const RADIUS_RATIO = 0.42;
-    const LINK_DIST = 95;
+    let width, height, points = [];
+    const numPoints = window.innerWidth < 768 ? 32 : 65;
 
     function resize() {
-        dpr = Math.min(window.devicePixelRatio || 1, 2);
-        width = canvas.clientWidth;
-        height = canvas.clientHeight;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
     }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
 
-    function buildPoints() {
-        points = [];
-        for (let i = 0; i < NUM_POINTS; i++) {
-            const phi = Math.acos(1 - 2 * (i + 0.5) / NUM_POINTS);
-            const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-            points.push({ phi, theta, pulse: Math.random() * Math.PI * 2 });
+    class Point {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.6;
+            this.vy = (Math.random() - 0.5) * 0.6;
+            this.radius = Math.random() * 2 + 1;
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > width) this.vx *= -1;
+            if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(212, 175, 55, 0.7)';
+            ctx.fill();
         }
     }
 
-    function draw() {
+    for (let i = 0; i < numPoints; i++) points.push(new Point());
+
+    let animationFrame;
+    function render() {
         ctx.clearRect(0, 0, width, height);
-        const cx = width * 0.72;
-        const cy = height * 0.5;
-        const r = Math.min(width, height) * RADIUS_RATIO;
-
-        const projected = points.map((p) => {
-            const t = p.theta + angle;
-            const x = Math.sin(p.phi) * Math.cos(t);
-            const y = Math.cos(p.phi);
-            const z = Math.sin(p.phi) * Math.sin(t);
-            return {
-                x: cx + x * r,
-                y: cy + y * r,
-                z,
-                pulse: p.pulse
-            };
-        });
-
-        // Connections between nearby points (front-facing only, for a clean look)
-        ctx.lineWidth = 1;
-        for (let i = 0; i < projected.length; i++) {
-            if (projected[i].z < -0.15) continue;
-            for (let j = i + 1; j < projected.length; j++) {
-                if (projected[j].z < -0.15) continue;
-                const dx = projected[i].x - projected[j].x;
-                const dy = projected[i].y - projected[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < LINK_DIST) {
-                    const alpha = (1 - dist / LINK_DIST) * 0.35 * ((projected[i].z + projected[j].z) / 2 + 1) / 2;
-                    ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
+        for (let i = 0; i < points.length; i++) {
+            points[i].update();
+            points[i].draw();
+            for (let j = i + 1; j < points.length; j++) {
+                const dist = Math.hypot(points[i].x - points[j].x, points[i].y - points[j].y);
+                if (dist < 115) {
                     ctx.beginPath();
-                    ctx.moveTo(projected[i].x, projected[i].y);
-                    ctx.lineTo(projected[j].x, projected[j].y);
+                    ctx.moveTo(points[i].x, points[i].y);
+                    ctx.lineTo(points[j].x, points[j].y);
+                    ctx.strokeStyle = `rgba(34, 211, 238, ${0.22 * (1 - dist / 115)})`;
+                    ctx.lineWidth = 0.8;
                     ctx.stroke();
                 }
             }
         }
+        animationFrame = requestAnimationFrame(render);
+    }
 
-        // Nodes
-        projected.forEach((p) => {
-            const depth = (p.z + 1) / 2;
-            const size = 0.8 + depth * 1.8;
-            const glow = 0.4 + 0.3 * Math.sin(p.pulse + angle * 6);
-            ctx.beginPath();
-            ctx.fillStyle = depth > 0.55
-                ? `rgba(34, 211, 238, ${0.35 + depth * 0.5 * glow})`
-                : `rgba(212, 175, 55, ${0.25 + depth * 0.45})`;
-            ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
-            ctx.fill();
+    // Freeze animation when hero is off-screen for battery/GPU performance
+    const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) render();
+        else cancelAnimationFrame(animationFrame);
+    });
+    observer.observe(canvas);
+}
+
+// 3D Tilt Effect on Hero Emblem
+function init3DHeroTilt() {
+    const stage = document.querySelector('.hero-visual');
+    const emblemStage = document.querySelector('.logo-3d-stage');
+    if (!stage || !emblemStage) return;
+
+    stage.addEventListener('mousemove', (e) => {
+        const rect = stage.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        emblemStage.style.transform = `rotateY(${x * 30}deg) rotateX(${-y * 30}deg) scale(1.04)`;
+    });
+
+    stage.addEventListener('mouseleave', () => {
+        emblemStage.style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
+    });
+}
+
+// Animated Numbers on Scroll
+function initStatsCounter() {
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-count'), 10);
+                const suffix = el.getAttribute('data-suffix') || '';
+                let current = 0;
+                const step = Math.ceil(target / 40);
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        el.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = current + suffix;
+                    }
+                }, 25);
+                observer.unobserve(el);
+            }
         });
-    }
+    }, { threshold: 0.4 });
 
-    function tick() {
-        angle += 0.0018;
-        draw();
-        if (running) frame = requestAnimationFrame(tick);
-    }
+    counters.forEach(c => observer.observe(c));
+}
 
-    function start() {
-        if (frame) return;
-        running = true;
-        frame = requestAnimationFrame(tick);
-    }
+// FAQ Accordion
+function initFaqAccordion() {
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+        q.addEventListener('click', () => {
+            const answer = q.nextElementSibling;
+            const expanded = q.getAttribute('aria-expanded') === 'true';
+            
+            // Close other accordion elements
+            questions.forEach(item => {
+                item.setAttribute('aria-expanded', 'false');
+                if (item.nextElementSibling) item.nextElementSibling.style.display = 'none';
+            });
 
-    function stop() {
-        running = false;
-        if (frame) cancelAnimationFrame(frame);
-        frame = null;
-    }
-
-    resize();
-    buildPoints();
-    draw();
-
-    if (!prefersReducedMotion) {
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => (entry.isIntersecting ? start() : stop()));
-        }, { threshold: 0.05 });
-        io.observe(canvas);
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) stop();
-            else if (canvas.getBoundingClientRect().top < window.innerHeight) start();
+            if (!expanded && answer) {
+                q.setAttribute('aria-expanded', 'true');
+                answer.style.display = 'block';
+            }
         });
+    });
+}
 
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                resize();
-                draw();
-            }, 150);
-        });
-    }
+// Contact Form Handler
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Sending Request...';
+
+        setTimeout(() => {
+            btn.innerHTML = '✔ Request Dispatched!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = '#ffffff';
+            form.reset();
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                btn.removeAttribute('style');
+            }, 4000);
+        }, 1000);
+    });
 }

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | EHLYHU Global IT Solutions</title>
-    <meta name="description" content="Contact EHLYHU Global IT Solutions for hardware, software, networking, cloud, security or complex system support.">
+    <title>Contact &amp; Enterprise Dispatch | EHLYHU Global IT Solutions</title>
+    <meta name="description" content="Connect with EHLYHU Global IT Solutions for enterprise hardware support, network engineering, cloud architecture, cybersecurity, and emergency incident dispatch.">
     <meta name="theme-color" content="#05070f">
     <link rel="canonical" href="https://ehlyhu.example/contact.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Contact | EHLYHU Global IT Solutions">
-    <meta property="og:description" content="Reach EHLYHU for hardware, software, networking, cloud, security or complex system support.">
+    <meta property="og:title" content="Contact &amp; Enterprise Dispatch | EHLYHU Global IT Solutions">
+    <meta property="og:description" content="Reach EHLYHU for hardware, networking, cloud, security, and emergency operational dispatch.">
     <meta property="og:image" content="assets/logo-512.png">
     <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,100 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.85fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .form-card {
+            background: var(--navy-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: clamp(28px, 4vw, 48px);
+            box-shadow: var(--shadow);
+        }
+        .form-grid-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-field-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            font-family: var(--font-display);
+            letter-spacing: 0.02em;
+        }
+        .form-field-group input,
+        .form-field-group select,
+        .form-field-group textarea {
+            background: var(--navy-deep);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 13px 16px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.94rem;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+        .form-field-group input:focus,
+        .form-field-group select:focus,
+        .form-field-group textarea:focus {
+            border-color: var(--gold);
+            background: rgba(13, 19, 34, 0.9);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+        .contact-sidebar-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .sidebar-box {
+            background: var(--navy-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+        }
+        .channel-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+        .channel-item:last-child {
+            margin-bottom: 0;
+        }
+        .channel-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-gold);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .form-grid-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header" id="header">
@@ -24,7 +118,7 @@
             <a href="index.html" class="logo">
                 <picture>
                     <source srcset="assets/logo-nav.webp" type="image/webp">
-                    <img src="assets/logo-nav.png" alt="EHLYHU" class="logo-img" width="52" height="52">
+                    <img src="assets/logo-nav.png" alt="EHLYHU Logo" class="logo-img" width="44" height="44">
                 </picture>
                 <div class="logo-text">EHLYHU<span>Global IT Solutions</span></div>
             </a>
@@ -36,120 +130,151 @@
                 <a href="contact.html" class="nav-link active">Contact</a>
                 <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Support</a>
             </nav>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
         </div>
     </header>
 
     <section class="page-hero">
+        <div class="container" style="max-width: 760px;">
+            <span class="section-label">Engineering Dispatch &amp; Intake</span>
+            <h1>Initiate Technical Engagement</h1>
+            <p>Whether you require urgent emergency incident triage or long-term multi-site architecture consulting, our specialists are ready to respond.</p>
+        </div>
+    </section>
+
+    <!-- Contact Layout Grid -->
+    <section style="padding-top: 10px; padding-bottom: 110px;">
         <div class="container">
-            <span class="section-label">Engage With Us</span>
-            <h1>Tell Us What You Need</h1>
-            <p>Describe the issue or project. Our specialists respond quickly with clear next steps and a defined path forward.</p>
+            <div class="contact-grid">
+                <!-- Interactive Form Box -->
+                <div class="form-card">
+                    <div style="margin-bottom: 28px;">
+                        <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 8px;">Project Intake Form</h2>
+                        <p style="color: var(--text-muted); font-size: 0.92rem; font-weight: 300;">Provide your operational parameters below for immediate engineering routing.</p>
+                    </div>
+
+                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="form-grid-row">
+                            <div class="form-field-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="e.g. Dr. Arthur Vance">
+                            </div>
+                            <div class="form-field-group">
+                                <label for="email">Corporate Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="vance@enterprise.com">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-row">
+                            <div class="form-field-group">
+                                <label for="phone">Direct Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+233 245 207 625">
+                            </div>
+                            <div class="form-field-group">
+                                <label for="company">Organization Name</label>
+                                <input type="text" id="company" name="company" placeholder="Global Logistics Ltd">
+                            </div>
+                        </div>
+
+                        <div class="form-field-group">
+                            <label for="service">Primary Service Domain *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select technology category...</option>
+                                <option value="hardware">Hardware Infrastructure &amp; Repairs</option>
+                                <option value="software">Software, Workspace &amp; Apps</option>
+                                <option value="networking">Advanced Networking &amp; ZTNA</option>
+                                <option value="cloud">Cloud &amp; Hybrid Architecture</option>
+                                <option value="security">Cybersecurity Defense &amp; EDR</option>
+                                <option value="managed">Managed Operations &amp; NOC</option>
+                                <option value="cctv">CCTV &amp; Physical Surveillance</option>
+                                <option value="backup">Immutable Backup &amp; Disaster Recovery</option>
+                                <option value="strategy">Executive IT Strategy &amp; vCIO Advisory</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field-group">
+                            <label for="urgency">Incident Urgency &amp; Priority</label>
+                            <select id="urgency" name="urgency">
+                                <option value="normal">Normal — Standard response within 1 business day</option>
+                                <option value="high">High — Priority same-day review preferred</option>
+                                <option value="critical">Critical — Active business-down outage or security breach</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field-group">
+                            <label for="message">Situation Overview &amp; Requirements *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Detail current error states, technical environments, timeline requirements, and scope objectives..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 6px;">Submit Technical Request &rarr;</button>
+                        
+                        <p style="text-align: center; font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">
+                            Protected under NDA. Corporate records remain strictly confidential.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Professional Sidebar Stack -->
+                <div class="contact-sidebar-stack">
+                    <!-- Direct Channels Box -->
+                    <div class="sidebar-box">
+                        <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 24px;">Direct Channels</h3>
+                        
+                        <div class="channel-item">
+                            <div class="channel-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                            </div>
+                            <div>
+                                <strong style="display: block; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 2px;">Secure Email Intake</strong>
+                                <a href="mailto:support@ehlyhu.example" style="color: var(--gold-light); font-size: 0.95rem; font-weight: 500;">support@ehlyhu.example</a>
+                            </div>
+                        </div>
+
+                        <div class="channel-item">
+                            <div class="channel-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+                            </div>
+                            <div>
+                                <strong style="display: block; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 2px;">24/7 Dispatch Hotline</strong>
+                                <a href="tel:+233245207625" style="color: var(--gold-light); font-size: 0.95rem; font-weight: 600; font-family: var(--font-mono);">+233 245 207 625</a>
+                            </div>
+                        </div>
+
+                        <div class="channel-item">
+                            <div class="channel-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                            </div>
+                            <div>
+                                <strong style="display: block; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 2px;">Operating Schedule</strong>
+                                <span style="color: var(--text); font-size: 0.9rem; line-height: 1.5; display: block;">Mon &ndash; Fri: 08:00 &ndash; 18:00<br><span style="color: var(--gold); font-weight: 500;">Emergency Desk: 24/7/365</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workflow Protocol Box -->
+                    <div class="sidebar-box">
+                        <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 16px;">Engagement Protocol</h3>
+                        <ol style="padding-left: 18px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.85; font-weight: 300;">
+                            <li><strong style="color: var(--text);">Intake Triage:</strong> A senior operations lead reviews parameter scope.</li>
+                            <li><strong style="color: var(--text);">Engineer Assignment:</strong> Specialized domain architects contact your team.</li>
+                            <li><strong style="color: var(--text);">Fixed Proposal:</strong> Clear diagnosis, timelines, and pricing provided.</li>
+                            <li><strong style="color: var(--text);">Execution:</strong> Seamless deployment backed by warranty guarantees.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Global Coverage Box -->
+                    <div class="sidebar-box">
+                        <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 12px;">Global Deployment</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 300; line-height: 1.75;">
+                            Remote diagnostic monitoring and multi-cloud management are supported globally. On-site emergency interventions are coordinated via regional partner nodes in over 40 countries.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section style="padding-top:10px;">
-        <div class="container contact-layout">
-            <div class="contact-form-box">
-                <form id="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="you@company.com">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Organization</label>
-                            <input type="text" id="company" name="company" placeholder="Company name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Category *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select category</option>
-                            <option value="hardware">Hardware Support & Lifecycle</option>
-                            <option value="software">Software & Applications</option>
-                            <option value="networking">Networking & Infrastructure</option>
-                            <option value="cloud">Cloud & Hybrid</option>
-                            <option value="security">Cybersecurity</option>
-                            <option value="managed">Managed IT / Complex Systems</option>
-                            <option value="other">Other / Not Sure</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="urgency">Urgency</label>
-                        <select id="urgency" name="urgency">
-                            <option value="normal">Normal — response within 1 business day</option>
-                            <option value="high">High — same-day preferred</option>
-                            <option value="critical">Critical — business impact / down</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Describe the Situation *</label>
-                        <textarea id="message" name="message" required placeholder="What is happening? Error messages? When did it start? Business impact? Any steps already taken?"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Submit Request</button>
-                    <p class="form-note" style="text-align:center;margin-top:18px;font-size:0.85rem;color:var(--text-dim);">
-                        Your information remains confidential. Typical response within a few business hours.
-                    </p>
-                </form>
-            </div>
-
-            <div class="contact-sidebar">
-                <div class="info-box">
-                    <h3>Direct Channels</h3>
-                    <div class="info-item">
-                        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-                        <div>
-                            <strong>Email</strong>
-                            <a href="mailto:support@ehlyhu.example">support@ehlyhu.com</a>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
-                        <div>
-                            <strong>Phone</strong>
-                            <a href="tel:+15551234567">+233 245 207 625</a>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-                        <div>
-                            <strong>Availability</strong>
-                            <span>Mon–Fri 08:00–18:00<br>Critical support 24/7</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <h3>What Happens Next</h3>
-                    <ol style="padding-left:20px;color:var(--text-muted);font-size:0.95rem;line-height:1.9;font-weight:300;">
-                        <li>We review your submission</li>
-                        <li>A specialist contacts you</li>
-                        <li>Diagnosis & transparent proposal</li>
-                        <li>Execution begins after approval</li>
-                    </ol>
-                </div>
-                <div class="info-box">
-                    <h3>Global Coverage</h3>
-                    <p style="color:var(--text-muted);font-size:0.92rem;font-weight:300;line-height:1.75;">
-                        Remote support is available worldwide. On-site intervention is coordinated through
-                        regional partners in over 40 countries — mention your location in the message field
-                        so we can route the request correctly.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -157,34 +282,37 @@
                     <a href="index.html" class="logo">
                         <picture>
                             <source srcset="assets/logo-nav.webp" type="image/webp">
-                            <img src="assets/logo-nav.png" alt="EHLYHU" class="logo-img" style="width:44px;height:44px;" loading="lazy" width="44" height="44">
+                            <img src="assets/logo-nav.png" alt="EHLYHU" class="logo-img" width="44" height="44">
                         </picture>
                         <div class="logo-text">EHLYHU<span>Global IT Solutions</span></div>
                     </a>
-                    <p>Premium IT services from basic hardware to complex global systems.</p>
+                    <p>Enterprise IT infrastructure services from physical endpoints to complex multi-cloud architectures.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="services.html">All Services</a>
-                    <a href="services.html#hardware">Hardware</a>
-                    <a href="services.html#cloud">Cloud</a>
-                    <a href="services.html#security">Security</a>
+                    <a href="services.html#hardware">Hardware Support</a>
+                    <a href="services.html#cloud">Cloud Infrastructure</a>
+                    <a href="services.html#security">Cybersecurity</a>
+                    <a href="services.html#cctv">CCTV &amp; Surveillance</a>
+                    <a href="services.html#backup">Backup &amp; Disaster Recovery</a>
+                    <a href="services.html#strategy">IT Strategy</a>
                 </div>
                 <div class="footer-col">
                     <h4>Company</h4>
-                    <a href="about.html">About</a>
-                    <a href="resources.html">Resources</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About EHLYHU</a>
+                    <a href="resources.html">Resources &amp; Flyers</a>
+                    <a href="contact.html">Contact Desk</a>
                 </div>
                 <div class="footer-col">
                     <h4>Support</h4>
-                    <a href="contact.html">Request Help</a>
-                    <a href="mailto:support@ehlyhu.example">Email</a>
-                    <a href="tel:+15551234567">Phone</a>
+                    <a href="contact.html">Request Dispatch</a>
+                    <a href="mailto:support@ehlyhu.example">support@ehlyhu.example</a>
+                    <a href="tel:+233245207625">+233 245 207 625</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 EHLYHU Global IT Solutions. All rights reserved.</p>
+                <p>&copy; 2026 EHLYHU Global IT Solutions. All rights reserved.</p>
+                <p>Precision &bull; Accountability &bull; Global Scale</p>
             </div>
         </div>
     </footer>
