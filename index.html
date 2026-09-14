@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHLYHU Global IT Solutions | Hardware to Complex Systems</title>
+    <meta name="description" content="EHLYHU Global IT Solutions — premium IT services covering hardware, software, networking, cloud, cybersecurity, managed systems, CCTV, backup & disaster recovery, and IT strategy & consulting worldwide.">
+    <meta name="theme-color" content="#05070f">
+    <link rel="canonical" href="https://ehlyhu.example/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EHLYHU Global IT Solutions | Hardware to Complex Systems">
+    <meta property="og:description" content="Premium IT services covering hardware, software, networking, cloud, cybersecurity, managed systems, CCTV, backup, and IT strategy consulting worldwide.">
+    <meta property="og:image" content="assets/logo-512.png">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <picture>
+                    <source srcset="assets/logo-nav.webp" type="image/webp">
+                    <img src="assets/logo-nav.png" alt="EHLYHU Logo" class="logo-img" width="52" height="52">
+                </picture>
+                <div class="logo-text">
+                    EHLYHU
+                    <span>Global IT Solutions</span>
+                </div>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Support</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero with Slideshow -->
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: linear-gradient(135deg, #0a0e1a 0%, #0f1c3a 50%, #1a1025 100%);"></div>
+            <div class="slide" style="background-image: linear-gradient(135deg, #0a0e1a 0%, #0c1a2e 40%, #0a1628 100%);"></div>
+            <div class="slide" style="background-image: linear-gradient(160deg, #05070f 0%, #0f1424 50%, #1a1520 100%);"></div>
+            <canvas id="network-canvas" aria-hidden="true"></canvas>
+        </div>
+
+        <div class="container" style="position:relative;z-index:2;display:flex;align-items:center;min-height:70vh;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    Global IT Excellence • 24/7 Support
+                </div>
+                <h1>Every IT Challenge.<br><span class="gold">One Global Solution.</span></h1>
+                <p class="hero-sub">
+                    From critical hardware failures to complex multi-site enterprise systems, 
+                    EHLYHU delivers end-to-end technology solutions with precision, speed and accountability.
+                </p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Request Support →</a>
+                    <a href="services.html" class="btn btn-outline btn-lg">Explore Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong data-count="850" data-suffix="+">0</strong>
+                        <span>Issues Resolved</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong data-count="98" data-suffix="%">0</strong>
+                        <span>Client Satisfaction</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>&lt;2h</strong>
+                        <span>Avg Response Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Floating Emblem with orbiting capability nodes -->
+        <div class="hero-visual">
+            <div class="orbit-ring orbit-ring--outer" aria-hidden="true">
+                <div class="orbit-chip" title="Cloud"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97 5.5 5.5 0 0 0-10.66-1.9A4.5 4.5 0 0 0 7 18z"/></svg></div>
+                <div class="orbit-chip" title="Security"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <div class="orbit-chip" title="Networking"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 6.5v4M12 10.5L6.3 16.3M12 10.5l5.7 5.8"/></svg></div>
+            </div>
+            <div class="orbit-ring orbit-ring--inner" aria-hidden="true">
+                <div class="orbit-chip" title="Hardware"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></div>
+                <div class="orbit-chip" title="Software"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg></div>
+                <div class="orbit-chip" title="Managed Systems"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="5" rx="1.2"/><rect x="4" y="10.5" width="16" height="5" rx="1.2"/><rect x="4" y="17" width="16" height="3.5" rx="1.2"/></svg></div>
+            </div>
+            <div class="logo-3d">
+                <picture>
+                    <source srcset="assets/logo-hero.webp" type="image/webp">
+                    <img src="assets/logo-hero.jpg" alt="EHLYHU Global IT Solutions Emblem" width="440" height="440">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <strong data-count="12" data-suffix="+">0</strong>
+                    <span>Years of Excellence</span>
+                </div>
+                <div class="stat-item">
+                    <strong data-count="40" data-suffix="+">0</strong>
+                    <span>Countries Served</span>
+                </div>
+                <div class="stat-item">
+                    <strong data-count="500" data-suffix="+">0</strong>
+                    <span>Enterprise Clients</span>
+                </div>
+                <div class="stat-item">
+                    <strong>24/7</strong>
+                    <span>Global Support Desk</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Deliver</span>
+                <h2>Complete Spectrum of IT Solutions</h2>
+                <p>Whether it’s a single device or a global infrastructure, our certified experts own every layer of your technology stack.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/hardware.jpg" alt="Hardware Support" width="30" height="30"></div>
+                    <h3>Hardware Support</h3>
+                    <p>Precision diagnostics, component-level repair and enterprise-grade hardware lifecycle management.</p>
+                    <ul>
+                        <li>Laptop, desktop & server repair</li>
+                        <li>Component-level service</li>
+                        <li>On-site & logistics support</li>
+                    </ul>
+                    <a href="services.html#hardware" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/software.jpg" alt="Software & Applications" width="30" height="30"></div>
+                    <h3>Software & Applications</h3>
+                    <p>Operating systems, productivity suites, custom applications and seamless licensing management.</p>
+                    <ul>
+                        <li>Microsoft 365 & Google Workspace</li>
+                        <li>OS & application recovery</li>
+                        <li>Licensing optimization</li>
+                    </ul>
+                    <a href="services.html#software" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/networking.jpg" alt="Networking & Infrastructure" width="30" height="30"></div>
+                    <h3>Networking & Infrastructure</h3>
+                    <p>Secure, high-performance networks designed for modern hybrid and multi-location environments.</p>
+                    <ul>
+                        <li>LAN / WAN / Wi-Fi design</li>
+                        <li>VPN & zero-trust access</li>
+                        <li>Performance engineering</li>
+                    </ul>
+                    <a href="services.html#networking" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/cloud.jpg" alt="Cloud & Hybrid" width="30" height="30"></div>
+                    <h3>Cloud & Hybrid</h3>
+                    <p>Strategic cloud adoption, migration excellence and continuous cost & performance optimization.</p>
+                    <ul>
+                        <li>Azure, AWS & GCP</li>
+                        <li>Hybrid architecture</li>
+                        <li>FinOps & governance</li>
+                    </ul>
+                    <a href="services.html#cloud" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/security.jpg" alt="Cybersecurity" width="30" height="30"></div>
+                    <h3>Cybersecurity</h3>
+                    <p>Layered defense, continuous monitoring and rapid incident response to protect your digital assets.</p>
+                    <ul>
+                        <li>Threat detection & response</li>
+                        <li>Security audits & hardening</li>
+                        <li>Email & endpoint protection</li>
+                    </ul>
+                    <a href="services.html#security" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/managed.jpg" alt="Managed & Complex Systems" width="30" height="30"></div>
+                    <h3>Managed & Complex Systems</h3>
+                    <p>Full managed services, enterprise architecture and mission-critical system design & operations.</p>
+                    <ul>
+                        <li>24/7 monitoring & NOC</li>
+                        <li>Virtualization & servers</li>
+                        <li>Enterprise architecture</li>
+                    </ul>
+                    <a href="services.html#managed" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/CCTV.jpg" alt="CCTV & Security Cameras" width="30" height="30"></div>
+                    <h3>CCTV & Security Cameras</h3>
+                    <p>Complete video surveillance solutions — from camera placement and IP networking to NVR management and 24/7 monitoring.</p>
+                    <ul>
+                        <li>Camera deployment & configuration</li>
+                        <li>NVR/DVR & remote access</li>
+                        <li>Video analytics & retention</li>
+                    </ul>
+                    <a href="services.html#cctv" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/backup.jpg" alt="Backup & Disaster Recovery" width="30" height="30"></div>
+                    <h3>Backup & Disaster Recovery</h3>
+                    <p>Comprehensive data protection, business continuity planning and rapid recovery to keep your operations resilient against any disruption.</p>
+                    <ul>
+                        <li>Automated backup & restore strategies</li>
+                        <li>Disaster recovery planning & testing</li>
+                        <li>Ransomware & data loss mitigation</li>
+                    </ul>
+                    <a href="services.html#backup" class="service-link">Discover more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img src="assets/illustrations/consulting.jpg" alt="IT Strategy & Consulting" width="30" height="30"></div>
+                    <h3>IT Strategy & Consulting</h3>
+                    <p>Strategic technology advisory and roadmap planning that align your IT investments with business outcomes and long-term growth.</p>
+                    <ul>
+                        <li>IT roadmap & digital transformation</li>
+                        <li>Budget & vendor advisory</li>
+                        <li>Architecture reviews & planning</li>
+                    </ul>
+                    <a href="services.html#strategy" class="service-link">Discover more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- One Stack, One Partner -->
+    <section>
+        <div class="container stack-section">
+            <div class="stack-3d" role="img" aria-label="Layered diagram showing hardware, network, cloud, security and managed systems stacked into one platform">
+                <div class="stack-3d-inner">
+                    <div class="stack-layer">
+                        <span class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span>
+                        <strong>Hardware</strong>
+                    </div>
+                    <div class="stack-layer">
+                        <span class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 6.5v4M12 10.5L6.3 16.3M12 10.5l5.7 5.8"/></svg></span>
+                        <strong>Network</strong>
+                    </div>
+                    <div class="stack-layer">
+                        <span class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97 5.5 5.5 0 0 0-10.66-1.9A4.5 4.5 0 0 0 7 18z"/></svg></span>
+                        <strong>Cloud</strong>
+                    </div>
+                    <div class="stack-layer">
+                        <span class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                        <strong>Security</strong>
+                    </div>
+                    <div class="stack-layer">
+                        <span class="stack-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="5" rx="1.2"/><rect x="4" y="10.5" width="16" height="5" rx="1.2"/><rect x="4" y="17" width="16" height="3.5" rx="1.2"/></svg></span>
+                        <strong>Managed Oversight</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="section-label">How It Fits Together</span>
+                <h2>One Stack, Managed by One Accountable Team</h2>
+                <p>
+                    Most technology failures happen at the seams — where the hardware team blames the network,
+                    the network team blames the cloud provider, and nobody owns the outcome. EHLYHU removes
+                    the seams entirely.
+                </p>
+                <p>
+                    Every layer, from the physical device to the security controls wrapped around it, is
+                    designed, monitored and supported by the same team. When something breaks, we already
+                    know how every layer beneath it behaves — so root causes surface in hours, not weeks.
+                </p>
+                <p>
+                    This is also why our managed clients see fewer repeat incidents: fixes are made at the
+                    layer that actually caused the problem, not just the layer where it was noticed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Method</span>
+                <h2>How EHLYHU Resolves Every Challenge</h2>
+                <p>A disciplined, transparent process that turns problems into permanent solutions.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <h3>Engage</h3>
+                    <p>Submit your issue or project. We gather context, urgency and business impact within hours.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <h3>Diagnose</h3>
+                    <p>Certified specialists perform deep analysis — remote or on-site — to identify true root causes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <h3>Propose</h3>
+                    <p>You receive a clear scope, timeline and investment. No work begins without your approval.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <h3>Deliver</h3>
+                    <p>We execute with precision, document thoroughly and implement preventive measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why EHLYHU -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Difference</span>
+                <h2>Why Teams Choose EHLYHU Over a Patchwork of Vendors</h2>
+                <p>Break-fix shops solve the ticket in front of them. We solve the environment behind it.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <span class="why-index">Ownership</span>
+                    <h3>One number to call</h3>
+                    <p>A single point of contact and a single support desk cover hardware, network, cloud and security — no routing between vendors while an outage runs.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-index">Transparency</span>
+                    <h3>Fixed-scope proposals</h3>
+                    <p>You see the diagnosis, the plan and the price before any billable work starts. No surprise invoices, no scope creep.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-index">Prevention</span>
+                    <h3>Root-cause, not band-aids</h3>
+                    <p>Every incident closes with a written cause and a preventive step, so the same failure doesn't reopen next quarter.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-index">Reach</span>
+                    <h3>Local pace, global scale</h3>
+                    <p>The same team that handles a single laptop can coordinate a multi-country rollout, without handing you off to a different division.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Who We Serve</span>
+                <h2>Built for Industries Where Downtime Isn't an Option</h2>
+            </div>
+            <div class="industries-row">
+                <div class="industry-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V9l8-5 8 5v12M9 21v-6h6v6"/></svg>
+                    Financial Services
+                </div>
+                <div class="industry-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="9" rx="1"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="6.5" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+                    Logistics & Supply Chain
+                </div>
+                <div class="industry-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 3 10 2-7 2 2h5"/></svg>
+                    Healthcare Administration
+                </div>
+                <div class="industry-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+                    Education
+                </div>
+                <div class="industry-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+                    Retail
+                </div>
+                <div class="industry-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l5 3v-3l5 3v-3l5 3v7z"/><path d="M3 21h18"/></svg>
+                    Manufacturing
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Client Voices</span>
+                <h2>Trusted by Organizations That Demand Excellence</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“EHLYHU restored our entire multi-site network after a critical failure. Their global coordination and technical depth were exceptional.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AR</div>
+                        <div class="author-info">
+                            <strong>Amina R.</strong>
+                            <span>CTO, International Logistics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“From hardware rollouts across three continents to our Azure migration — one partner handled everything with complete accountability.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JL</div>
+                        <div class="author-info">
+                            <strong>James L.</strong>
+                            <span>VP Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“When ransomware hit at 2 a.m., their emergency team was online within minutes. We were operational again before the next business day.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <strong>Sarah K.</strong>
+                            <span>CISO, Financial Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Common Questions</span>
+                <h2>Before You Reach Out</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How fast can EHLYHU respond to a critical outage?<span class="faq-plus"></span></button>
+                    <div class="faq-answer"><p>Critical, business-down issues are triaged immediately by our 24/7 desk, with an average first response under two hours. Standard requests are acknowledged within one business day.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you replace our existing IT team, or work alongside them?<span class="faq-plus"></span></button>
+                    <div class="faq-answer"><p>Either. Some clients hand us the full function; others keep an internal team and use EHLYHU for overflow, specialist skills, or after-hours coverage. We fit the model you already run.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Do you work with organizations that operate across multiple countries?<span class="faq-plus"></span></button>
+                    <div class="faq-answer"><p>Yes. Multi-site and multi-country coordination is one of our core strengths — from consistent hardware rollouts to unified cloud and security policy across regions.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What happens if the issue turns out to be bigger than expected?<span class="faq-plus"></span></button>
+                    <div class="faq-answer"><p>We pause and return to you with an updated scope and price before continuing. You always approve the plan before further billable work begins.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can EHLYHU support a single device, or only enterprise contracts?<span class="faq-plus"></span></button>
+                    <div class="faq-answer"><p>Both. We take on individual hardware and software repairs as readily as multi-year managed services agreements — the same standard of accountability applies either way.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready for Technology That Simply Works?</h2>
+                <p>Whether you face an urgent outage or need a long-term global IT partner, EHLYHU is ready to deliver.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Start a Conversation</a>
+                    <a href="resources.html" class="btn btn-ghost btn-lg">View Resources</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <picture>
+                            <source srcset="assets/logo-nav.webp" type="image/webp">
+                            <img src="assets/logo-nav.png" alt="EHLYHU" class="logo-img" style="width:44px;height:44px;" loading="lazy" width="44" height="44">
+                        </picture>
+                        <div class="logo-text">
+                            EHLYHU
+                            <span>Global IT Solutions</span>
+                        </div>
+                    </a>
+                    <p>Premium IT services from basic hardware to complex global systems. One accountable partner. Every solution.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html#hardware">Hardware</a>
+                    <a href="services.html#software">Software</a>
+                    <a href="services.html#networking">Networking</a>
+                    <a href="services.html#cloud">Cloud</a>
+                    <a href="services.html#security">Cybersecurity</a>
+                    <a href="services.html#managed">Managed Systems</a>
+                    <a href="services.html#cctv">CCTV & Security Cameras</a>
+                    <a href="services.html#backup">Backup & Disaster Recovery</a>
+                    <a href="services.html#strategy">IT Strategy & Consulting</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About EHLYHU</a>
+                    <a href="resources.html">Resources & Flyers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="contact.html">Request Help</a>
+                    <a href="mailto:support@ehlyhu.example">support@ehlyhu.example</a>
+                    <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 EHLYHU Global IT Solutions. All rights reserved.</p>
+                <p>Precision • Accountability • Global Reach</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
