@@ -1596,6 +1596,7 @@ section { padding: 110px 0; position: relative; }
     .contact-layout,
     .service-detail,
     .stack-section { grid-template-columns: 1fr; gap: 48px; }
+    .service-detail .service-visual { order: -1; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .flyers-grid { grid-template-columns: repeat(2, 1fr); }
     .why-grid { grid-template-columns: repeat(2, 1fr); }
