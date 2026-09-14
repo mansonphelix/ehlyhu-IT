@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EHLYHU Global IT Solutions — Website
 
 A static marketing site for EHLYHU Global IT Solutions: hardware, software,
@@ -77,3 +78,6 @@ Everything is plain HTML — copy is written directly into each page.
 Shared styling lives in `css/styles.css` under CSS custom properties
 in `:root` (colors, fonts, spacing) at the top of the file, so brand
 color or font changes only need to happen in one place.
+=======
+# ehlyhu-IT
+>>>>>>> 49ab5f0e71301aec3e76d4ea0e032a631f2ba9e4
