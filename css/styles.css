@@ -1594,8 +1594,8 @@ section { padding: 110px 0; position: relative; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
     .about-grid,
     .contact-layout,
-    .service-detail,
     .stack-section { grid-template-columns: 1fr; gap: 48px; }
+    .service-detail { display: flex; flex-direction: column; gap: 48px; }
     .service-detail, .service-detail.reverse { direction: ltr; }
     .service-detail .service-visual { order: -1; }
     .service-detail .service-detail-content { order: 1; }
