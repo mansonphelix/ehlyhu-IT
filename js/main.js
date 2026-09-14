@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Subtle 3D tilt on logo (skipped for users who prefer reduced motion)
     const logo3d = document.querySelector('.logo-3d');
-    if (logo3d && !prefersReducedMotion) {
+    if (logo3d && !prefersReducedMotion && !isMobile && !isTouch) {
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth - 0.5) * 18;
             const y = (e.clientY / window.innerHeight - 0.5) * 12;
@@ -116,10 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Scroll reveal (simple)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
     const revealEls = document.querySelectorAll(
         '.service-card, .step-card, .testimonial-card, .value-card, .why-item, .industry-pill, .faq-item, .timeline-item'
     );
     if (revealEls.length) {
+        const shouldReveal = !isMobile && !isTouch && !prefersReducedMotion;
         const revObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -129,12 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.15 });
 
-        revealEls.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(24px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            revObserver.observe(el);
-        });
+        if (shouldReveal) {
+            revealEls.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(24px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                revObserver.observe(el);
+            });
+        }
     }
 
     // FAQ accordion
@@ -175,7 +182,7 @@ function initNetworkCanvas() {
     let running = !prefersReducedMotion;
     let frame = null;
 
-    const NUM_POINTS = 90;
+    const NUM_POINTS = (window.matchMedia('(max-width: 768px)').matches ? 45 : 90);
     const RADIUS_RATIO = 0.42;
     const LINK_DIST = 95;
 

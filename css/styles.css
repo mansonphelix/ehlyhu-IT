@@ -55,6 +55,9 @@ body {
     line-height: 1.65;
     overflow-x: hidden;
     min-height: 100vh;
+    -webkit-text-size-adjust: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 /* Animated energy background */
@@ -111,6 +114,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     position: relative;
     overflow: hidden;
     letter-spacing: 0.02em;
+    touch-action: manipulation;
 }
 
 .btn-primary {
@@ -155,6 +159,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: flex;
     align-items: center;
     transition: all 0.35s ease;
+    padding-top: env(safe-area-inset-top, 0px);
+}
+
+@media (max-width: 768px) {
+    .header { height: calc(var(--header-h) - 6px); }
+    .nav { top: calc(var(--header-h) - 6px); padding-top: 16px; padding-bottom: 16px; }
 }
 
 .header.scrolled {
@@ -462,6 +472,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (prefers-reduced-motion: reduce) {
     .logo-3d, .orbit-ring { animation: none; }
+}
+
+@media (max-width: 768px) {
+    .logo-3d, .orbit-ring { animation: none; }
+    #network-canvas { opacity: 0.3; }
+    .hero { min-height: auto; }
+    .hero > .container { min-height: auto !important; padding-top: 40px; padding-bottom: 40px; }
 }
 
 /* ========== SECTION COMMONS ========== */
@@ -1553,7 +1570,18 @@ section { padding: 110px 0; position: relative; }
 .sla-table tr:last-child td { border-bottom: none; }
 .sla-table td strong { color: var(--text); font-weight: 600; }
 
-/* ========== RESPONSIVE ========== */
+.revealEls,
+.service-card, .step-card, .testimonial-card, .value-card, .why-item, .industry-pill, .faq-item, .timeline-item {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .service-card, .step-card, .testimonial-card, .value-card, .why-item, .industry-pill, .faq-item, .timeline-item {
+        opacity: 1;
+        transform: none;
+    }
+}
 @media (max-width: 1100px) {
     .hero-visual { display: none; }
     .hero-content { max-width: 100%; }
@@ -1582,8 +1610,9 @@ section { padding: 110px 0; position: relative; }
         left: 0; right: 0;
         background: rgba(5, 7, 15, 0.98);
         backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
         flex-direction: column;
-        padding: 24px;
+        padding: 20px 18px;
         gap: 4px;
         border-bottom: 1px solid var(--border);
     }
@@ -1601,15 +1630,114 @@ section { padding: 110px 0; position: relative; }
     .footer-grid { grid-template-columns: 1fr; }
     .values-grid { grid-template-columns: 1fr; }
     .hero-stats { gap: 28px; }
-    section { padding: 80px 0; }
+    section { padding: 72px 0; }
     .why-grid { grid-template-columns: 1fr; }
     .sla-table { font-size: 0.85rem; }
     .sla-table th, .sla-table td { padding: 14px 16px; }
     .faq-question { font-size: 0.95rem; padding: 18px 20px; }
+
+    .container { padding: 0 18px; }
+    .cta-box { padding: 48px 24px; }
+    .service-card { padding: 32px 24px; }
+    .testimonial-card { padding: 28px 24px; }
+    .step-card { padding: 28px 20px; }
+    .info-box { padding: 24px 20px; }
+    .contact-form-box { padding: 32px 24px; }
+    .flyer-preview { padding: 24px 18px; }
+    .why-item { padding: 28px 22px; }
+    .stack-section .stack-3d { height: 260px; }
+    .industry-pill { padding: 14px 20px; font-size: 0.9rem; }
+    .hero-sub { font-size: 1.05rem; }
+    .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+    .hero-stat strong { font-size: 1.7rem; }
+    .stat-item strong { font-size: 2.2rem; }
+    .footer-brand .logo-img { width: 42px; height: 42px; }
+    .footer-brand .logo-text { font-size: 1.2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+    .footer-col a { font-size: 0.92rem; }
 }
 
 @media (max-width: 480px) {
+    .container { padding: 0 14px; }
     .hero-actions, .cta-actions, .flyer-actions { flex-direction: column; }
     .btn-lg { width: 100%; }
-    .logo-text { font-size: 1.15rem; }
+    .btn { font-size: 0.92rem; padding: 14px 24px; }
+    .btn-lg { padding: 16px 24px; font-size: 0.98rem; }
+    .logo-text { font-size: 1.1rem; }
+    section { padding: 60px 0; }
+    .hero { padding: calc(var(--header-h) + 32px) 0 64px; }
+    .hero h1 { font-size: 2rem; line-height: 1.15; }
+    .hero-sub { font-size: 0.95rem; margin-bottom: 32px; }
+    .hero-actions { gap: 12px; margin-bottom: 40px; }
+    .hero-stats { gap: 20px; }
+    .hero-stat strong { font-size: 1.5rem; }
+    .hero-stat span { font-size: 0.78rem; }
+    .services-grid,
+    .testimonials-grid,
+    .process-steps,
+    .stats-grid { gap: 16px; }
+    .service-card { padding: 24px 18px; border-radius: var(--radius); }
+    .service-card h3 { font-size: 1.15rem; }
+    .testimonial-card { padding: 22px 18px; }
+    .step-card { padding: 24px 18px; }
+    .step-num { width: 48px; height: 48px; font-size: 1.05rem; margin-bottom: 16px; }
+    .process-steps { gap: 14px; }
+    .stats-bar { padding: 50px 0; }
+    .stat-item strong { font-size: 1.9rem; }
+    .stat-item span { font-size: 0.82rem; }
+    .stats-grid { gap: 24px; }
+    .cta-banner { padding: 60px 0; }
+    .cta-box { padding: 36px 18px; border-radius: var(--radius); }
+    .cta-box h2 { font-size: 1.5rem; }
+    .cta-box p { font-size: 0.95rem; }
+    .footer { padding-top: 56px; }
+    .footer-grid { gap: 32px; padding-bottom: 40px; }
+    .footer-brand p { font-size: 0.88rem; }
+    .footer-col h4 { font-size: 0.8rem; margin-bottom: 16px; }
+    .footer-col a { font-size: 0.88rem; margin-bottom: 10px; }
+    .footer-bottom { padding: 20px 0; }
+    .footer-bottom p { font-size: 0.78rem; }
+    .why-item { padding: 22px 18px; }
+    .why-item h3 { font-size: 1rem; }
+    .why-item p { font-size: 0.85rem; }
+    .industry-pill { padding: 12px 16px; font-size: 0.85rem; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .industry-pill svg { width: 16px; height: 16px; }
+    .faq-question { padding: 16px 16px; gap: 12px; }
+    .faq-answer p { padding: 0 16px 18px; font-size: 0.88rem; }
+    .faq-list { gap: 10px; }
+    .faq-item { border-radius: 10px; }
+    .service-detail, .contact-layout { gap: 32px; }
+    .contact-form-box { padding: 24px 18px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { padding: 12px 14px; font-size: 16px; }
+    .stack-section .stack-3d { height: 220px; }
+    .stack-3d-inner { height: 200px; }
+    .sla-table { font-size: 0.8rem; }
+    .sla-table th, .sla-table td { padding: 12px 14px; }
+    .flyers-grid { gap: 16px; }
+    .flyer-preview { min-height: 220px; }
+    .values-grid { gap: 14px; }
+    .value-card { padding: 20px 18px; }
+    .hero-badge { font-size: 0.75rem; padding: 7px 14px; margin-bottom: 20px; }
+    .hero-actions { gap: 10px; margin-bottom: 36px; }
+    .section-header { margin-bottom: 48px; }
+    .section-header h2 { font-size: 1.7rem; }
+    .section-header p { font-size: 0.95rem; }
+}
+
+@media (max-width: 360px) {
+    .container { padding: 0 12px; }
+    .hero h1 { font-size: 1.75rem; }
+    .logo-text { font-size: 1rem; }
+    .logo-img { width: 38px; height: 38px; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .nav-link { padding: 14px 18px; font-size: 1rem; }
+    .btn { min-height: 48px; }
+    .service-link { padding: 4px 0; }
+    .industry-pill { padding: 14px 22px; }
+    .faq-question { padding: 18px 22px; }
+    .footer-col a { padding: 4px 0; }
 }
