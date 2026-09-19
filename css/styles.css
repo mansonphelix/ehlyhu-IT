@@ -1280,6 +1280,68 @@ section {
         padding: 26px 16px;
     }
 
+    /* Contact Page Mobile Fixes */
+    .contact-sidebar-stack {
+        gap: 14px;
+    }
+    .sidebar-box {
+        padding: 18px 16px !important;
+    }
+    .sidebar-box h3 {
+        font-size: 1.05rem !important;
+        margin-bottom: 12px !important;
+    }
+    .sidebar-box ol {
+        padding-left: 16px;
+    }
+    .sidebar-box ol li,
+    .sidebar-box p {
+        font-size: 0.84rem !important;
+        line-height: 1.6;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+    .channel-item {
+        margin-bottom: 16px;
+    }
+    .channel-item a,
+    .channel-item span,
+    .channel-item strong {
+        word-break: break-all;
+        overflow-wrap: anywhere;
+    }
+    .channel-icon {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+    }
+    /* Prevent iOS Safari auto-zoom on focused inputs (<16px font) and contain fields */
+    .form-field-group input,
+    .form-field-group select,
+    .form-field-group textarea {
+        font-size: 1rem !important;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .form-field-group label {
+        font-size: 0.8rem !important;
+    }
+    .form-card h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 6px !important;
+    }
+    .form-card > div > p {
+        font-size: 0.84rem !important;
+    }
+    #contact-form {
+        gap: 14px !important;
+    }
+    .form-grid-row {
+        gap: 12px !important;
+    }
+
     /* Mobile View Services Order: h3 -> image -> description */
     .service-detail,
     .service-detail.reverse {
