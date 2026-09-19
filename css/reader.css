@@ -1,0 +1,446 @@
+/* =========================================================
+   EHLYHU GLOBAL IT SOLUTIONS
+   Resource Reader Stylesheet — Shared reader layout for all
+   downloadable PDF brochures converted to HTML documents.
+
+   Modern / professional revision:
+   - Neutral, high-contrast palette with a single restrained accent
+   - Flat surfaces, soft shadows instead of glow/neon
+   - No background animation, shimmer text, or spinning icons
+   - Same class names and CSS variables, so no markup changes needed
+   ========================================================= */
+
+:root {
+    /* Core palette — override these to re-skin the whole reader */
+    --reader-bg: #f7f8fa;
+    --reader-surface: #ffffff;
+    --reader-border: #e2e5eb;
+    --reader-text: #1a1d24;
+    --reader-text-muted: #5b6270;
+    --reader-accent: #b8862f;      /* subdued gold, used sparingly */
+    --reader-accent-soft: #f4ecdc;
+    --reader-shadow: 0 1px 2px rgba(16, 18, 24, 0.04), 0 8px 24px rgba(16, 18, 24, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --reader-bg: #0f1115;
+        --reader-surface: #161821;
+        --reader-border: #2a2d38;
+        --reader-text: #eef0f3;
+        --reader-text-muted: #9aa1ae;
+        --reader-accent: #d4af5a;
+        --reader-accent-soft: #262115;
+        --reader-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* ---------- Reader Page Shell ---------- */
+.reader-page {
+    min-height: 100vh;
+    background: var(--reader-bg);
+    color: var(--reader-text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Top Bar (Navigation + Download) ---------- */
+.reader-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--header-h);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid var(--reader-border);
+    display: flex;
+    align-items: center;
+    transition: background 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    .reader-topbar {
+        background: rgba(15, 17, 21, 0.85);
+    }
+}
+
+.reader-topbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+}
+
+/* Back link */
+.reader-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--reader-text);
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--reader-border);
+    background: var(--reader-surface);
+    transition: border-color 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.reader-back:hover {
+    background: var(--reader-accent-soft);
+    border-color: var(--reader-accent);
+    color: var(--reader-text);
+}
+
+/* Download button group */
+.reader-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ---------- Reader Document Container ---------- */
+.reader-doc {
+    max-width: 860px;
+    margin: calc(var(--header-h) + 40px) auto 0;
+    padding: 48px 48px 140px;
+    width: 100%;
+    background: var(--reader-surface);
+    border-left: 1px solid var(--reader-border);
+    border-right: 1px solid var(--reader-border);
+}
+
+/* ---------- Document Header ---------- */
+.reader-doc-header {
+    text-align: center;
+    margin-bottom: 64px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--reader-border);
+}
+
+.reader-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--reader-accent);
+    margin-bottom: 24px;
+    padding: 8px 18px;
+    border: 1px solid var(--reader-border);
+    border-radius: 50px;
+    background: var(--reader-accent-soft);
+}
+
+.reader-eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #2f9e64;
+    border-radius: 50%;
+}
+
+.reader-doc-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 4.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    word-break: break-word;
+    color: var(--reader-text);
+}
+
+.reader-doc-header .reader-sub {
+    color: var(--reader-text-muted);
+    font-size: 1.08rem;
+    font-weight: 400;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ---------- Document Body ---------- */
+.reader-doc-body h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 1.85rem);
+    font-weight: 700;
+    color: var(--reader-text);
+    margin: 64px 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--reader-border);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.reader-doc-body h2::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: var(--reader-accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.reader-doc-body h2 .section-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--reader-text-muted);
+    letter-spacing: 0.1em;
+    margin-left: auto;
+    padding: 4px 10px;
+    border: 1px solid var(--reader-border);
+    border-radius: 6px;
+}
+
+.reader-doc-body h2:first-child {
+    margin-top: 0;
+}
+
+.reader-doc-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--reader-text);
+    margin: 36px 0 14px;
+    word-break: break-word;
+    padding-left: 14px;
+    border-left: 3px solid var(--reader-accent);
+}
+
+.reader-doc-body p {
+    color: var(--reader-text-muted);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 22px;
+    font-weight: 400;
+    word-break: break-word;
+    text-align: left;
+}
+
+.reader-doc-body p strong {
+    color: var(--reader-text);
+    font-weight: 600;
+}
+
+.reader-doc-body ul,
+.reader-doc-body ol {
+    padding-left: 28px;
+    margin-bottom: 24px;
+}
+
+.reader-doc-body li {
+    color: var(--reader-text-muted);
+    font-size: 1rem;
+    margin-bottom: 14px;
+    font-weight: 400;
+    line-height: 1.75;
+    word-break: break-word;
+    padding-left: 4px;
+}
+
+.reader-doc-body li strong {
+    color: var(--reader-text);
+    font-weight: 600;
+}
+
+.reader-doc-body ul li::marker {
+    color: var(--reader-accent);
+}
+
+/* ---------- Blockquote style for emphasis ---------- */
+.reader-doc-body blockquote {
+    border-left: 3px solid var(--reader-accent);
+    padding: 20px 24px;
+    margin: 32px 0;
+    font-style: normal;
+    color: var(--reader-text);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    background: var(--reader-accent-soft);
+    border-radius: 0 10px 10px 0;
+}
+
+/* ---------- Highlight / Callout Box ---------- */
+.reader-callout {
+    background: var(--reader-accent-soft);
+    border: 1px solid var(--reader-border);
+    border-left: 3px solid var(--reader-accent);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 40px 0;
+    box-shadow: var(--reader-shadow);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.reader-callout::after {
+    content: '\2713';
+    color: var(--reader-accent);
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.reader-callout p {
+    margin-bottom: 0;
+    color: var(--reader-text);
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* ---------- Contact Footer inside Reader ---------- */
+.reader-footer {
+    background: var(--reader-bg);
+    border-top: 1px solid var(--reader-border);
+    padding: 56px 20px 48px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.reader-footer p {
+    color: var(--reader-text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+}
+
+.reader-footer p strong {
+    color: var(--reader-text);
+    font-weight: 700;
+}
+
+.reader-footer a {
+    color: var(--reader-accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.reader-footer a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+/* ---------- Print Styling ---------- */
+@media print {
+    .reader-topbar,
+    .reader-footer {
+        display: none !important;
+    }
+
+    .reader-doc {
+        padding: 0;
+        max-width: none;
+        border: none;
+    }
+
+    body {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    .reader-doc-body h2,
+    .reader-doc-body h3,
+    .reader-doc-body p,
+    .reader-doc-body li {
+        color: #000000;
+    }
+
+    .reader-callout {
+        border: 1px solid #000;
+        background: #fff;
+        box-shadow: none;
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    :root {
+        --header-h: 64px;
+    }
+
+    .reader-topbar {
+        top: 12px;
+    }
+
+    .reader-doc {
+        padding: calc(var(--header-h) + 28px) 20px 80px;
+    }
+
+    .reader-doc-header {
+        margin-bottom: 48px;
+        padding-bottom: 32px;
+    }
+
+    .reader-doc-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .reader-doc-body h2 {
+        font-size: 1.25rem;
+        margin-top: 48px;
+        padding-bottom: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .reader-doc-body h2 .section-num {
+        margin-left: 0;
+        margin-right: auto;
+        font-size: 0.68rem;
+        padding: 3px 8px;
+    }
+
+    .reader-doc-body h3 {
+        font-size: 1.08rem;
+        padding-left: 10px;
+    }
+
+    .reader-doc-body p,
+    .reader-doc-body li {
+        font-size: 0.94rem;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .reader-doc-body blockquote {
+        padding: 16px 18px;
+        font-size: 0.96rem;
+        margin: 24px 0;
+    }
+
+    .reader-callout {
+        padding: 20px 20px;
+        margin: 28px 0;
+        gap: 12px;
+    }
+
+    .reader-footer {
+        padding: 40px 16px 32px;
+        margin-top: 56px;
+    }
+}
+
+/* Reduced motion support (kept for compatibility; no animations remain) */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+    }
+}

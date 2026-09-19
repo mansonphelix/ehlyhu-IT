@@ -20,7 +20,7 @@
     <style>
         .resources-layout {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 32px;
         }
         .resource-card {
@@ -80,6 +80,11 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+        }
+        @media (max-width: 1200px) {
+            .resources-layout {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
         @media (max-width: 1024px) {
             .resources-layout {
@@ -141,7 +146,7 @@
                         <h4>General Capabilities Brochure</h4>
                         <p>A comprehensive 2-page executive briefing detailing EHLYHU's full vertical technology spectrum, cross-border capabilities, and enterprise governance models.</p>
                         <div class="resource-actions">
-                            <a href="assets/flyer-general.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Read PDF</a>
+                            <a href="resources/general-capabilities.html" class="btn btn-outline btn-sm">Read Online</a>
                             <a href="assets/flyer-general.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
                         </div>
                     </div>
@@ -158,7 +163,7 @@
                         <h4>Consolidated Partnership Brief</h4>
                         <p>Explains the financial and operational friction caused by managing multi-vendor patchwork teams and details the advantages of consolidated single-team ownership.</p>
                         <div class="resource-actions">
-                            <a href="assets/flyer-cta.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Read PDF</a>
+                            <a href="resources/consolidated-partnership.html" class="btn btn-outline btn-sm">Read Online</a>
                             <a href="assets/flyer-cta.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
                         </div>
                     </div>
@@ -175,7 +180,7 @@
                         <h4>Emergency Outage Protocol</h4>
                         <p>Immediate-action reference sheet outlining crisis triage procedures, high-priority escalation contacts, and ransomware containment guidelines for security officers.</p>
                         <div class="resource-actions">
-                            <a href="assets/flyer-emergency.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Read PDF</a>
+                            <a href="resources/emergency-outage-protocol.html" class="btn btn-outline btn-sm">Read Online</a>
                             <a href="assets/flyer-emergency.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
                         </div>
                     </div>
@@ -192,7 +197,7 @@
                         <h4>Managed Operations Guide</h4>
                         <p>Detailed technical documentation covering remote server administration, automated security patching schedules, and guaranteed incident response SLAs.</p>
                         <div class="resource-actions">
-                            <a href="assets/flyer-managed.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Read PDF</a>
+                            <a href="resources/managed-operations-guide.html" class="btn btn-outline btn-sm">Read Online</a>
                             <a href="assets/flyer-managed.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
                         </div>
                     </div>
@@ -209,7 +214,7 @@
                         <h4>Backup &amp; DR Architecture Brief</h4>
                         <p>Technical brief explaining enterprise backup automation, secondary cloud offsite vaulting, and simulated bare-metal recovery testing procedures.</p>
                         <div class="resource-actions">
-                            <a href="assets/flyer-backup.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Read PDF</a>
+                            <a href="resources/backup-dr-architecture.html" class="btn btn-outline btn-sm">Read Online</a>
                             <a href="assets/flyer-backup.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
                         </div>
                     </div>
@@ -226,8 +231,76 @@
                         <h4>IT Strategy &amp; vCIO Prospectus</h4>
                         <p>Outlines how our advisory practice partners with corporate leadership to align hardware lifecycles, cloud migration budgets, and compliance frameworks.</p>
                         <div class="resource-actions">
-                            <a href="assets/flyer-strategy.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Read PDF</a>
+                            <a href="resources/it-strategy-vcio.html" class="btn btn-outline btn-sm">Read Online</a>
                             <a href="assets/flyer-strategy.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity & Resilience -->
+                <div class="resource-card">
+                    <div class="resource-preview" style="background: linear-gradient(165deg, #1a0a0a 0%, #0f1424 100%);">
+                        <img src="assets/illustrations/security.jpg" alt="Cybersecurity Defense" style="width: 64px; height: 64px; object-fit: cover; border-radius: 12px; margin: 0 auto; box-shadow: 0 6px 20px rgba(0,0,0,0.5);" loading="lazy" width="64" height="64">
+                        <h3>Multi-Layered Cyber Defense</h3>
+                        <p>EDR · SIEM · phishing defense · forensics</p>
+                    </div>
+                    <div class="resource-body">
+                        <h4>Cybersecurity &amp; Resilience Brief</h4>
+                        <p>Proactive multi-layered defenses protecting endpoints, email, identity stores, and corporate data with vulnerability management, OS hardening, and incident containment forensics.</p>
+                        <div class="resource-actions">
+                            <a href="resources/cybersecurity-resilience.html" class="btn btn-outline btn-sm">Read Online</a>
+                            <a href="assets/flyer-security.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CCTV & Physical Surveillance -->
+                <div class="resource-card">
+                    <div class="resource-preview" style="background: linear-gradient(165deg, #0f1424 0%, #182414 100%);">
+                        <img src="assets/illustrations/CCTV.jpg" alt="CCTV Surveillance" style="width: 64px; height: 64px; object-fit: cover; border-radius: 12px; margin: 0 auto; box-shadow: 0 6px 20px rgba(0,0,0,0.5);" loading="lazy" width="64" height="64">
+                        <h3>Comprehensive Video Visibility</h3>
+                        <p>IP cameras · NVR storage · encrypted feeds</p>
+                    </div>
+                    <div class="resource-body">
+                        <h4>CCTV Surveillance Solutions Brief</h4>
+                        <p>End-to-end IP video surveillance engineered for comprehensive visibility, security monitoring, and regulatory compliance across enterprise facilities.</p>
+                        <div class="resource-actions">
+                            <a href="resources/cctv-surveillance.html" class="btn btn-outline btn-sm">Read Online</a>
+                            <a href="assets/flyer-cctv.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & Hybrid Architecture -->
+                <div class="resource-card">
+                    <div class="resource-preview" style="background: linear-gradient(165deg, #0a0e1a 0%, #0c1a2e 100%);">
+                        <img src="assets/illustrations/cloud.jpg" alt="Cloud Architecture" style="width: 64px; height: 64px; object-fit: cover; border-radius: 12px; margin: 0 auto; box-shadow: 0 6px 20px rgba(0,0,0,0.5);" loading="lazy" width="64" height="64">
+                        <h3>Cloud &amp; Hybrid Architecture</h3>
+                        <p>AWS · Azure · GCP migrations · FinOps</p>
+                    </div>
+                    <div class="resource-body">
+                        <h4>Cloud &amp; Hybrid Architecture Brief</h4>
+                        <p>Migration roadmap design, multi-cloud architecture, and ongoing governance across AWS, Azure, and Google Cloud with high-availability failover.</p>
+                        <div class="resource-actions">
+                            <a href="resources/cloud-hybrid-architecture.html" class="btn btn-outline btn-sm">Read Online</a>
+                            <a href="assets/flyer-cloud.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full-Spectrum Catalog -->
+                <div class="resource-card">
+                    <div class="resource-preview" style="background: linear-gradient(165deg, #0f1424 0%, #151b2e 100%);">
+                        <img src="assets/illustrations/globe.jpg" alt="Full Spectrum" style="width: 64px; height: 64px; object-fit: cover; border-radius: 12px; margin: 0 auto; box-shadow: 0 6px 20px rgba(0,0,0,0.5);" loading="lazy" width="64" height="64">
+                        <h3>Every IT Challenge.<br>One Global Solution.</h3>
+                        <p>Complete single-source technology catalog</p>
+                    </div>
+                    <div class="resource-body">
+                        <h4>Full-Spectrum IT Services Brief</h4>
+                        <p>A single-source catalog of every technology service EHLYHU delivers across hardware, software, networking, cloud, security, surveillance, backup, and strategic advisory.</p>
+                        <div class="resource-actions">
+                            <a href="resources/full-spectrum-services.html" class="btn btn-outline btn-sm">Read Online</a>
+                            <a href="assets/flyer-spectrum.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
                         </div>
                     </div>
                 </div>
@@ -274,8 +347,8 @@
                 <div class="footer-col">
                     <h4>Support</h4>
                     <a href="contact.html">Request Dispatch</a>
-                    <a href="mailto:support@ehlyhu.example">support@ehlyhu.example</a>
-                    <a href="tel:+233245207625">+233 245 207 625</a>
+                    <a href="mailto:support@ehlyhu.com">support@ehlyhu.com</a>
+                    <a href="tel:+233543182555">+233 543 182 555</a>
                 </div>
             </div>
             <div class="footer-bottom">

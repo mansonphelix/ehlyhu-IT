@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup &amp; DR Architecture Brief | EHLYHU Global IT Solutions</title>
+    <meta name="description" content="Read EHLYHU's Backup &amp; Disaster Recovery Architecture Brief — enterprise backup automation, cloud offsite vaulting, and bare-metal recovery testing.">
+    <meta name="theme-color" content="#05070f">
+    <link rel="canonical" href="https://ehlyhu.example/resources/backup-dr-architecture.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Backup &amp; DR Architecture Brief | EHLYHU">
+    <meta property="og:description" content="Technical brief explaining enterprise backup automation, secondary cloud offsite vaulting, and simulated bare-metal recovery testing procedures.">
+    <meta property="og:image" content="assets/logo-512.png">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/reader.css">
+    <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+</head>
+<body>
+    <div class="reader-page">
+        <header class="reader-topbar">
+            <div class="container">
+                <a href="../resources.html" class="reader-back">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back to Resources
+                </a>
+                <div class="reader-download">
+                    <a href="../assets/flyer-backup.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Open in New Tab</a>
+                    <a href="../assets/flyer-backup.pdf" class="btn btn-primary btn-sm" download>Download PDF</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="reader-doc">
+            <header class="reader-doc-header">
+                <span class="reader-eyebrow">Business Continuity · Technical Brief</span>
+                <h1>Backup &amp; Disaster Recovery Architecture Brief</h1>
+                <p class="reader-sub">Data integrity is the bedrock of business continuity. This technical brief explains enterprise backup automation, secondary cloud offsite vaulting, and simulated bare-metal recovery testing procedures.</p>
+            </header>
+
+            <div class="reader-doc-body">
+                <h2>Immutable Backup Strategy<span class="section-num">01</span></h2>
+                <p>EHLYHU constructs backup systems that cannot be altered or deleted by ransomware or insider threat. Immutable snapshots are written to isolated storage with time-locked retention policies that prevent premature deletion. Every backup job is cryptographically verified upon creation and re-validated on a scheduled basis to detect silent data corruption before it matters.</p>
+
+                <h2>Automated Protection Coverage<span class="section-num">02</span></h2>
+                <p>Our backup platform provides continuous protection for workstations, physical servers, virtual machines, and cloud workloads. Incremental backups run on a defined schedule with automated deduplication and compression to minimize storage consumption and network impact. Recovery point objectives are tuned to your data volatility profile, with critical systems protected to near-zero data loss.</p>
+
+                <h2>Secondary Cloud Vaulting<span class="section-num">03</span></h2>
+                <p>Primary backups are replicated to a geographically separate secondary cloud vault that is inaccessible from your production network. This air-gapped replication ensures that even a catastrophic compromise of your primary site leaves recoverable data intact. The secondary vault is monitored for integrity and replication lag, with automated alerting on any deviation from the defined recovery posture.</p>
+
+                <h2>Documented Recovery Runbooks<span class="section-num">04</span></h2>
+                <p>Every protected environment is accompanied by a documented disaster recovery runbook that specifies step-by-step restoration procedures, responsible roles, and target timelines. Runbooks are reviewed quarterly and validated through simulated recovery drills so that your team can execute recovery confidently under pressure without depending on external assistance.</p>
+
+                <h2>RTO &amp; RPO Targets<span class="section-num">05</span></h2>
+                <p>Recovery time and recovery point objectives are defined contractually and measured continuously. Our architecture supports recovery time objectives ranging from fifteen minutes for critical systems to four hours for secondary workloads. Bare-metal recovery orchestration enables rapid failover to replacement hardware without requiring a reimage from scratch.</p>
+
+                <blockquote>
+                    Air-gapped backups that cannot be altered or deleted by ransomware. Recovery validated quarterly through simulated disaster drills.
+                </blockquote>
+
+                <div class="reader-callout">
+                    <p>Air-gapped and offline ransomware protection layers are included in every DR engagement. Schedule a recovery drill validation with our continuity team.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="reader-footer">
+            <p><strong>EHLYHU Global IT Solutions</strong> — Precision · Accountability · Global Scale</p>
+            <p>Secure Email: <a href="mailto:support@ehlyhu.example">support@ehlyhu.com</a> · 24/7 Dispatch: <a href="tel:+233543182555">+233 543 182 555</a>
+        </footer>
+    </div>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
